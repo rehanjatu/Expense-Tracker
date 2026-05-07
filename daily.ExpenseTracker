@@ -1,0 +1,39 @@
+expenses = []
+
+while True:
+    print("\n===== DAILY EXPENSE TRACKER =====")
+    print("1. Add Expense")
+    print("2. View Expenses")
+    print("3. Exit")
+
+    choice = input("Choose: ")
+
+    if choice == "1":
+        name = input("Expense Name: ")
+        amount = float(input("Amount: "))
+
+        expenses.append({
+            "name": name,
+            "amount": amount
+        })
+
+        print("✅ Expense Added")
+
+    elif choice == "2":
+        total = 0
+
+        print("\n--- Expenses ---")
+
+        for expense in expenses:
+            print(f"{expense['name']} - ₹{expense['amount']}")
+            total += expense['amount']
+
+        print("----------------")
+        print(f"💰 Total: ₹{total}")
+
+    elif choice == "3":
+        print("👋 Exiting...")
+        break
+
+    else:
+        print("⚠ Invalid Choice")
