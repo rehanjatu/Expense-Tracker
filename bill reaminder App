@@ -1,0 +1,37 @@
+bills = []
+
+while True:
+    print("\n===== BILL REMINDER APP =====")
+    print("1. Add Bill")
+    print("2. View Bills")
+    print("3. Exit")
+
+    choice = input("Choose: ")
+
+    if choice == "1":
+        name = input("Bill Name: ")
+        due_date = input("Due Date: ")
+        amount = input("Amount: ₹")
+
+        bills.append({
+            "name": name,
+            "date": due_date,
+            "amount": amount
+        })
+
+        print("✅ Bill Added")
+
+    elif choice == "2":
+        print("\n--- Upcoming Bills ---")
+
+        for bill in bills:
+            print(
+                f"{bill['name']} | Due: {bill['date']} | ₹{bill['amount']}"
+            )
+
+    elif choice == "3":
+        print("👋 Exiting...")
+        break
+
+    else:
+        print("⚠ Invalid Choice")

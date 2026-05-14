@@ -1,0 +1,33 @@
+goal = float(input("Enter your savings goal: ₹"))
+saved = 0
+
+while True:
+    print("\n===== SAVINGS TRACKER =====")
+    print("1. Add Savings")
+    print("2. View Progress")
+    print("3. Exit")
+
+    choice = input("Choose: ")
+
+    if choice == "1":
+        amount = float(input("Enter amount saved: ₹"))
+        saved += amount
+
+        print("✅ Savings Updated")
+
+    elif choice == "2":
+        remaining = goal - saved
+
+        print(f"\n🎯 Goal: ₹{goal}")
+        print(f"💰 Saved: ₹{saved}")
+        print(f"📉 Remaining: ₹{remaining}")
+
+        if saved >= goal:
+            print("🏆 Congratulations! Goal Achieved!")
+
+    elif choice == "3":
+        print("👋 Exiting...")
+        break
+
+    else:
+        print("⚠ Invalid Choice")
